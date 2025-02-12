@@ -74,12 +74,6 @@ body {
 div a{
     text-decoration: none;
 }
-#YT{
-    color:red;
-}
-#DC {
-    color: blue;
-}
 #unselectable {
     -webkit-touch-callout: none;
     -webkit-user-select: none;
