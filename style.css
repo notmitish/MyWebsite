@@ -13,7 +13,6 @@ body {
   border: 1px solid white;
 }
 
-/* Header bar */
 .header {
   position: relative;
   height: 25px;
@@ -48,7 +47,6 @@ body {
   background: #28ca41;
 }
 
-/* Terminal window */
 .terminal {
   color: white;
   padding: 10px;
@@ -58,7 +56,6 @@ body {
   box-sizing: border-box;
 }
 
-/* Terminal lines */
 .line {
   display: flex;
   align-items: center;
@@ -87,7 +84,6 @@ a.typed {
   margin-right: 6px;
 }
 
-/* Cursor animation */
 @keyframes blink {
   0%, 100% { border-color: white; }
   50% { border-color: transparent; }
