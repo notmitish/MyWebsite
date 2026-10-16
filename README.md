@@ -1,6 +1,3 @@
-# MyWebsite
-My Website
-=======
 # 🌐 MyWebsite
 
 Welcome to my personal corner of the internet.
