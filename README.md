@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 # MyWebsite
 My Website
 =======
