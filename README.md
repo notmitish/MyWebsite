@@ -1,3 +1,7 @@
+<<<<<<< HEAD
+# MyWebsite
+My Website
+=======
 # 🌐 MyWebsite
 
 Welcome to my personal corner of the internet.
@@ -25,3 +29,4 @@ Check out the live website to see my latest work and projects.
 ## License
 
 Feel free to explore the code for learning purposes, but please don't copy the website design or content without permission.
+>>>>>>> 6641b3517755827fced28d5a04fe3d2eed966915

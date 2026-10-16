@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="description" content="NotMitish — 16-year-old developer from Nepal. Python, C, JavaScript." />
+  <meta name="theme-color" content="#121212" />
+  <title>NotMitish</title>
+<<<<<<< HEAD
+  <link rel="icon" href="icons/sarkar.png" />
+=======
+  <link rel="icon" href="icons/favicon.png" />
+>>>>>>> 6641b3517755827fced28d5a04fe3d2eed966915
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="container">
+    <div class="header">
+      <div class="head_text">Command Prompt</div>
+      <div class="controls">
+        <button class="minimize" aria-label="Minimize (decorative only)"></button>
+        <button class="maximize" aria-label="Maximize (decorative only)"></button>
+        <button class="close" aria-label="Close (decorative only)"></button>
+      </div>
+    </div>
+    <div
+      class="terminal"
+      id="terminal"
+      role="log"
+      aria-live="polite"
+      aria-label="Terminal output. Click anywhere to skip the typing animation."
+      tabindex="0"
+    ></div>
+  </main>
+
+  <script>
+    // Each line is either plain text (gets typed character-by-character)
+    // or html (rendered instantly — used for icon/link rows).
+    const lines = [
+      { prompt: "C:\\Users\\Visitor>", text: "about.me" },
+      { text: "Hi! I'm NotMitish, a 16-year-old developer from Nepal!" },
+      { text: "I love programming in Python, C, JavaScript." },
+      { text: "(Ok, that JavaScript part was a lie :)" },
+      { prompt: "C:\\Users\\Visitor>", text: "socials.links" },
+      {
+        html: true,
+<<<<<<< HEAD
+        text: '<img class="icon" src="icons/instagram.png" alt="" /><a href="https://www.instagram.com/notmitish_/" target="_blank" rel="noopener noreferrer" class="typed">@notmitish_</a>'
+=======
+        text: '<img class="icon" src="icons/instagram.png" alt="" /><a href="https://www.instagram.com/not.mitish/" target="_blank" rel="noopener noreferrer" class="typed">@not.mitish</a>'
+>>>>>>> 6641b3517755827fced28d5a04fe3d2eed966915
+      },
+      {
+        html: true,
+        text: '<img class="icon" src="icons/discord.png" alt="" /><a href="https://discord.com/invite/WNGTjJggVS" target="_blank" rel="noopener noreferrer" class="typed">@notmitish</a>'
+      },
+      {
+        html: true,
+        text: '<img class="icon" src="icons/youtube.png" alt="" /><a href="https://www.youtube.com/@notmitish" target="_blank" rel="noopener noreferrer" class="typed">NotMitish</a>'
+      },
+      {
+        html: true,
+        text: '<img class="icon" src="icons/github.png" alt="" /><a href="https://github.com/NotMitish" target="_blank" rel="noopener noreferrer" class="typed">NotMitish</a>'
+      },
+      {
+        html: true,
+        text: '<img class="icon" src="icons/gmail.png" alt="" /><a href="mailto:aint.ashmitt@gmail.com" class="typed">aint.ashmitt@gmail.com</a>'
+      }
+    ];
+
+    const terminal = document.getElementById("terminal");
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    let skip = false;
+    let done = false;
+    terminal.addEventListener("click", () => { skip = true; });
+
+    function sleep(ms) {
+      return new Promise((resolve) => {
+        const id = setTimeout(resolve, ms);
+        if (skip || reduceMotion) { clearTimeout(id); resolve(); }
+      });
+    }
+
+    function buildLine({ prompt }) {
+      const line = document.createElement("div");
+      line.className = "line";
+      if (prompt) {
+        const promptSpan = document.createElement("span");
+        promptSpan.className = "prompt";
+        promptSpan.textContent = prompt;
+        line.appendChild(promptSpan);
+      }
+      const span = document.createElement("span");
+      span.className = "typed";
+      line.appendChild(span);
+      terminal.appendChild(line);
+      return span;
+    }
+
+    async function typeLine(entry) {
+      const span = buildLine(entry);
+
+      if (entry.html) {
+        span.innerHTML = entry.text;
+        return;
+      }
+
+      if (skip || reduceMotion) {
+        span.textContent = entry.text;
+        return;
+      }
+
+      span.classList.add("blinking");
+      for (const char of entry.text) {
+        span.appendChild(document.createTextNode(char));
+        terminal.scrollTop = terminal.scrollHeight;
+        await sleep(20);
+      }
+      span.classList.remove("blinking");
+    }
+
+    async function startTyping() {
+      for (const entry of lines) {
+        if (done) return;
+        await typeLine(entry);
+      }
+    }
+
+    startTyping();
+  </script>
+</body>
+</html>

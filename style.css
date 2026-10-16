@@ -1,0 +1,151 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #1f1f1f;
+  margin: 0;
+  padding: 4rem 1rem;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  font-family: 'Courier New', Courier, monospace;
+}
+
+.container {
+  background-color: rgb(18, 18, 18);
+  width: 100%;
+  max-width: 950px;
+  border: 1px solid white;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.header {
+  position: relative;
+  height: 28px;
+  background-color: #1f1f1f;
+  display: flex;
+  align-items: center;
+}
+
+.head_text {
+  color: white;
+  font-size: 0.9rem;
+  position: absolute;
+  left: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.controls {
+  position: absolute;
+  right: 0;
+  top: 0;
+  height: 100%;
+  display: flex;
+}
+
+.controls button {
+  width: 20px;
+  height: 100%;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: filter 0.15s ease;
+}
+
+.controls button:hover {
+  filter: brightness(1.15);
+}
+
+.controls button:focus-visible {
+  outline: 2px solid white;
+  outline-offset: -2px;
+}
+
+.close   { background: #ff5f57; }
+.maximize { background: #ffbd2e; }
+.minimize { background: #28ca41; }
+
+.terminal {
+  color: white;
+  padding: 10px;
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.terminal:focus-visible {
+  outline: 2px solid skyblue;
+  outline-offset: -2px;
+}
+
+.line {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  font-size: 1rem;
+  margin-bottom: 5px;
+  word-break: break-word;
+}
+
+.prompt {
+  color: grey;
+  margin-right: 5px;
+  white-space: nowrap;
+}
+
+.typed {
+  color: white;
+}
+
+a.typed {
+  text-decoration: none;
+  color: skyblue;
+}
+
+a.typed:hover,
+a.typed:focus-visible {
+  text-decoration: underline;
+}
+
+.blinking {
+  border-right: 2px solid white;
+  animation: blink 0.8s step-end infinite;
+}
+
+.icon {
+  height: 20px;
+  width: 20px;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+@keyframes blink {
+  0%, 100% { border-color: white; }
+  50% { border-color: transparent; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blinking {
+    animation: none;
+    border-right-color: transparent;
+  }
+}
+
+@media (max-width: 600px) {
+  body {
+    padding: 2rem 0.5rem;
+  }
+  .line {
+    font-size: 0.85rem;
+  }
+<<<<<<< HEAD
+}
+=======
+}
+>>>>>>> 6641b3517755827fced28d5a04fe3d2eed966915
